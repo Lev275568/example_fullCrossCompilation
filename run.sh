@@ -29,7 +29,7 @@ mainImpl() {
     #local llvmLibCxxIncludeConfigSite="$llvmLibCxxIncludeCppV1"
 
     #############
-    # libcxx,compilerRt are from dwonloaded llvm
+    # libcxx,compilerRt are from downloaded llvm
     # sysroot from host system
     local gccInstallDir="$sysroot/usr/lib/gcc/x86_64-linux-gnu/14"
     local sysroot="/"
@@ -42,12 +42,15 @@ mainImpl() {
     # END CONFIG
 
     if [[ ! -d "$resourceDir" ]];then
+        echo "Not a directory: $resourceDir"
         exit 1
     fi
     if [[ ! -d "$llvmLibCxxLib" ]];then
+        echo "Not a directory: $llvmLibCxxLib"
         exit 1
     fi
     if [[ ! -d "$llvmLibCxxIncludeCppV1" ]];then
+        echo "Not a directory: $llvmLibCxxLib"
         exit 1
     fi
 
