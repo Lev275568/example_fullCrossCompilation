@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[cpp]": {
+      "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "files.trimFinalNewlines": false,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": false,
+    "clang-format.executable": "${workspaceRoot}/tools/llvm/bin/clang-format",
+    "files.watcherExclude": {
+      "tools": true,
+    },
+    "chat.agent.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "terminal.integrated.initialHint": false,
+    "workbench.settings.showAISearchToggle": false,
+    "chat.disableAIFeatures": true,
+    "telemetry.editStats.details.enabled": false,
+    "telemetry.editStats.enabled": false,
+    "telemetry.feedback.enabled": false,
+  }
+}

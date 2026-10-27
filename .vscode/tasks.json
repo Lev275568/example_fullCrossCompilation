@@ -1,0 +1,123 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "runDefault",
+            "type": "shell",
+            "command": "./run.sh",
+            "presentation": {
+                "clear": true,
+            },
+            "problemMatcher": [
+                {
+                    // The problem is owned by the cpp language service.
+                    "owner": "my_build",
+                    // The file name for reported problems is relative to the opened folder.
+                    "fileLocation": "absolute",
+                    // The name that will be shown as the source of the problem.
+                    "source": "clang",
+                    // The actual pattern to match problems in the output.
+                    "pattern": {
+                        // The regular expression. Example to match: helloWorld.c:5:3: warning: implicit declaration of function ‘printf’ [-Wimplicit-function-declaration]
+                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error|fatal error):\\s+(.*)$",
+                        // The first match group matches the file name which is relative.
+                        "file": 1,
+                        // The second match group matches the line on which the problem occurred.
+                        "line": 2,
+                        // The third match group matches the column at which the problem occurred.
+                        "column": 3,
+                        // The fourth match group matches the problem's severity. Can be ignored. Then all problems are captured as errors.
+                        "severity": 4,
+                        // The fifth match group matches the message.
+                        "message": 5
+                    }
+                },
+                // lld linux
+                {
+                    "owner": "my_build",
+                    "fileLocation": "absolute",
+                    "source": "linker",
+                    "pattern": {
+                        // linker undefined symbol
+                        "regexp": "^ld.lld:\\s+(warning|error|fatal error):(.*)$",
+                        "file": 1,
+                        "line": 1,
+                        "severity": 1,
+                        "message": 2,
+                    }
+                },
+                // lld linux
+                {
+                    "owner": "my_build",
+                    "fileLocation": "absolute",
+                    "source": "linker",
+                    "pattern": {
+                        // linker undefined symbol file line
+                        "regexp": "^>>> (referenced by) .* \\((.*):(\\d+)\\)$",
+                        "file": 2,
+                        "line": 3,
+                        "message": 1,
+                    }
+                },
+                // lld windows
+                {
+                    "owner": "my_build",
+                    "fileLocation": "absolute",
+                    "source": "linker",
+                    "pattern": {
+                        // linker undefined symbol
+                        "regexp": "^lld-link:\\s+(warning|error|fatal error):(.*)$",
+                        "file": 1,
+                        "line": 1,
+                        "severity": 1,
+                        "message": 2,
+                    }
+                },
+                // lld windows
+                {
+                    "owner": "my_build",
+                    "fileLocation": "absolute",
+                    "source": "linker",
+                    "pattern": {
+                        // linker undefined symbol file line
+                        "regexp": "^>>> (referenced by)\\s+(.*):(\\d+)$",
+                        "file": 2,
+                        "line": 3,
+                        "message": 1,
+                    }
+                },
+                {
+                    "owner": "my_build",
+                    "fileLocation": "absolute",
+                    "source": "bash",
+                    "pattern": {
+                        "regexp": "^(.+\\.sh): line (\\d+):(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "message": 3,
+                    }
+                },
+                {
+                    // qt AutoUic
+                    "owner": "my_build",
+                    "fileLocation": "absolute",
+                    "source": "AutoUic",
+                    "pattern": {
+                        // Example: AutoUic: /sensorSettings/SensorSettings.ui: Warning: The name 'label_14' (QLabel) is already in use, defaulting to 'label_141'.
+                        "regexp": "^AutoUic:\\s+(.*):(\\s+)(Warning):\\s+(.*)$",
+                        "file": 1,
+                        "line": 1,
+                        "severity": 3,
+                        "message": 4,
+                    }
+                },
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+    ]
+}

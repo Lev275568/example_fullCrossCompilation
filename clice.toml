@@ -1,0 +1,13 @@
+default_configuration = "activeConfiguration"
+
+[project]
+cache_dir = "${workspace}/outDir/.clice/cache"
+logging_dir = "${workspace}/outDir/.clice/logs"
+
+[tracker]
+workspace_poll_seconds = 0
+
+[[rules]]
+configuration = "activeConfiguration"
+compile_commands = ["${workspace}/outDir/build"]
+
