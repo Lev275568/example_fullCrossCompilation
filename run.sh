@@ -20,8 +20,8 @@ mainImpl() {
     #############
     # libcxx,compilerRt are built as standalone
     # sysroot specific location
-    #local gccInstallDir="$sysroot/usr/lib/gcc/x86_64-linux-gnu/12"
     #local sysroot="/home/user2/src/compilerLib/sysroot"
+    #local gccInstallDir="$sysroot/usr/lib/gcc/x86_64-linux-gnu/12"
     #local resourceDir="/home/user2/src/compilerLib/compilerRt"
     #local llvmLibCxxRoot="/home/user2/src/compilerLib/libcxx"
     #local llvmLibCxxLib="$llvmLibCxxRoot/lib"
@@ -31,8 +31,8 @@ mainImpl() {
     #############
     # libcxx,compilerRt are from downloaded llvm
     # sysroot from host system
-    local gccInstallDir="$sysroot/usr/lib/gcc/x86_64-linux-gnu/14"
     local sysroot="/"
+    local gccInstallDir="$sysroot/usr/lib/gcc/x86_64-linux-gnu/14"
     local resourceDir="$llvmRoot/lib/clang/23"
     local llvmLibCxxLib="$llvmRoot/lib/x86_64-unknown-linux-gnu"
     local llvmLibCxxIncludeConfigSite="$llvmRoot/include/x86_64-unknown-linux-gnu/c++/v1"
