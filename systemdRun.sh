@@ -19,4 +19,3 @@ params+=(-p ProtectSystem=strict)
 params+=(-p ProtectHome=read-only)
 params+=(-p ReadWritePaths=$OUT_DIR)
 #params+=(-p IPAccounting=true) # does not works and not planned https://github.com/systemd/systemd/issues/38588
-params+=("${ret[@]}")

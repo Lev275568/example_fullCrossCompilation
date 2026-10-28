@@ -171,7 +171,15 @@ mainImpl() {
     params+=(--build "$cmakeBuildOut")
     params+=(--target mexample)
     "${params[@]}"
-    
+
+    if [[  ! -e "$cmakeBuildOut/mexample/stdlib" ]];then
+        ln -s "$llvmLibCxxLib" "$cmakeBuildOut/mexample/stdlib"
+    fi
+
+    local params=()
+    params+=("$cmakeBuildOut/mexample/mexample")
+    "${params[@]}"
+
     echo "run SUCCESS"
 }
 
