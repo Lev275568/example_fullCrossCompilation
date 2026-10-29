@@ -1,5 +1,5 @@
 Download the official builds into the tools folder:
-- CMake 4.5.0-rc1: https://cmake.org/download/
+- CMake 4.5.0-rc2: https://cmake.org/download/
 - LLVM 23.1.4: https://github.com/llvm/llvm-project/releases/
 - ninja-build 1.13.2: https://github.com/ninja-build/ninja/releases/
 

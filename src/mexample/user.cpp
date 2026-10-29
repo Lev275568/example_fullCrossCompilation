@@ -6,6 +6,10 @@ import myspace.mexample;
 
 import std;
 
+#if GLOBAL_DEFINE != 100
+#error
+#endif
+
 int main()
 {
     try {

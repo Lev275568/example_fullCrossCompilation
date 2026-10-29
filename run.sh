@@ -92,6 +92,7 @@ mainImpl() {
     compileFlags+=("-isystem$llvmLibCxxIncludeConfigSite")
     compileFlags+=("-isystem$llvmLibCxxIncludeCppV1")
     compileFlags+=("-isystem$llvmRoot/lib/clang/23/include")
+    compileFlags+=("-include$sourceRoot/globalInc.hpp")
     #compileFlags+=(--end-no-unused-arguments)
 
     local cxxFlags=("${commonFlags[@]}" "${compileFlags[@]}")
