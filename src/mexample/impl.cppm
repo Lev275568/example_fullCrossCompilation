@@ -9,6 +9,9 @@ module myspace.mexample:impl;
 
 namespace myspace::mexample {
 
-void hello() { std::print("Hello "); }
+void hello()
+{
+    std::print("Hello ");
+}
 
 } // namespace myspace::mexample
