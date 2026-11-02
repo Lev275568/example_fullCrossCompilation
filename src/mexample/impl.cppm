@@ -3,6 +3,8 @@ module;
 
 #include <print> // prefer 'import std;' instead
 
+class ForwardDeclareClass;
+
 module myspace.mexample:impl;
 
 // import std;
