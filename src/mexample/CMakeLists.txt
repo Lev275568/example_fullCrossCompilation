@@ -8,6 +8,8 @@ target_sources(mexample
         impl.cppm
         interface_part.cppm
         mexample.cppm
+        Class1.cppm
+        Class1.cpp
 )
 target_compile_features(mexample PUBLIC cxx_std_26)
 
